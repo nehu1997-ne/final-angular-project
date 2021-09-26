@@ -1,0 +1,76 @@
+<!-- <h4>Welcome to Dashboard</h4> -->
+<!-- <button (click)="logout()">Logout</button> -->
+<div class="row">
+  <div class="col-2 col-md-2">
+  <div class="sidenav">
+    <img src="/assets/img/user.png">
+    <a href="" routerLink="order-menu">Show Orders</a>
+    <a href="" routerLink="order-now">Create order</a>
+    <a href="" routerLink="all-order">Change password</a>
+    <a href="" routerLink="all-order">change image</a>
+    <button (click)="logout()" class="btn btn-danger" style="margin-left:35px">logout</button>
+
+
+  </div>
+</div>
+
+<div class=" col-sm-12 col-md-12 container-fluid">
+  <nav class="navbar navbar-expand-lg navbar-dark " >
+    <div class="container-fluid">
+      <a class="navbar-brand">
+        <h1 style="margin-left:210px">Chetu</h1>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+        aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" routerLink="/home">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/employee-registration">blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/employee-registration">contact</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/employee-registration">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/order-menu">Food</a>
+          </li>
+          <!-- <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/employee-registration">Signup</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/login">Login</a>
+            </li> -->
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/blog">blog</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/order-menu">contact</a>
+          </li>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" routerLink="/employee-registration"><span class="fa fa-sign-in" aria-hidden="true"></span > Sign Up</a></li>
+            <li id="abc"><a href="#"  routerLink="/login"><span class="fa fa-user-circle-o" aria-hidden="true" ></span> Login</a></li>
+          </ul>
+
+  
+  
+        </ul>
+  
+      </div>
+    </div>
+  </nav>
+  
+<div class="main">
+  <router-outlet></router-outlet>
+</div>
+
+
+
+
+ 

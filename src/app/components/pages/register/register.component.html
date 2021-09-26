@@ -1,0 +1,187 @@
+<div class=" col-sm-12 col-md-12">
+    <nav class="navbar navbar-expand-lg navbar-dark " >
+      <div class="container-fluid">
+        <a class="navbar-brand">
+          <h1>Chetu</h1>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
+          aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="#" routerLink="/home">Home</a>
+            </li>
+           
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/order-menu">Food delivery</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/blog">blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#" routerLink="/order-menu">contact</a>
+            </li>
+            <ul class="nav navbar-nav navbar-right">
+                <li><a href="#" routerLink="/register"><span class="fa fa-sign-in" aria-hidden="true"></span > Sign Up</a></li>
+                <li id="abc"><a href="#"  routerLink="/login"><span class="fa fa-user-circle-o" aria-hidden="true" ></span> Login</a></li>
+              </ul>
+    
+    
+          </ul>
+    
+        </div>
+      </div>
+    </nav>
+
+
+
+
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card">
+            <div class="card-header  text-center">
+                <h4> Signup</h4>
+            </div>
+            <div class="card-body ">
+                <form (ngSubmit)="submit(formd)" #formd=ngForm>
+                    <div class="row">
+                        <div class="col-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="fname"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" #efname="ngModel" [ngClass]="efname?.invalid && efname?.
+                                    touched? 'is-invalid': 'null'" [ngClass]="efname?.valid && efname?.
+                                    touched? 'is-valid': 'null'" placeholder="firstname" aria-describedby="fname"
+                                        name="fname" [(ngModel)]="formdata.fname" required>
+
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-6">
+                            <div class="form-group">
+                                <div class="input-group">
+                                    <span class="input-group-text" id="lname"><i class="fa fa-user-circle-o" aria-hidden="true"></i></span>
+                                    <input type="text" class="form-control" #elname="ngModel" [ngClass]="elname?.invalid && elname?.
+                                    touched? 'is-invalid': 'null'" [ngClass]="elname?.valid && elname?.
+                                    touched? 'is-valid': 'null'" placeholder="lastname" aria-describedby="lname"
+                                        name="lname" [(ngModel)]="formdata.lname" required>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="email"><i class="fa fa-envelope" aria-hidden="true"></i></span>
+                            <input type="email" class="form-control" placeholder="enter your email"
+                                aria-describedby="email" #eemail=ngModel name="email" [(ngModel)]="formdata.email"
+                                required pattern="^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$" />
+
+
+                        </div>
+                        <div class="text-danger" *ngIf="eemail.errors?.required && eemail.touched"> <alert type="danger">
+                            <strong>Email id required</strong> 
+                          </alert>
+                       </div>
+
+                        <div class="text-danger" *ngIf="!eemail.errors?.required && eemail.touched && eemail?.invalid">
+                            <alert type="danger">
+                                <strong>Email invalid</strong> 
+                              </alert>
+                            </div>
+
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="email"><i class="fa fa-phone-square" aria-hidden="true"></i></span>
+                            <input type="email" class="form-control" placeholder="enter your number"
+                                aria-describedby="mobile" name="mobile" [(ngModel)]="formdata.mobile" #emobile=ngModel
+                                required pattern="[0-9]{5}[-][0-9]{7}[-][0-9]{1}" />
+
+                        </div>
+                        <div class="text-danger" *ngIf="emobile.errors?. required && emobile.touched">
+                            <alert type="danger">
+                                <strong>mobile number required</strong> 
+                              </alert>
+                            
+                        </div>
+                        <div class="text-danger"
+                            *ngIf="!emobile.errors?. required && emobile.touched && emobile?.invalid">
+                            <alert type="danger">
+                                <strong>mobile number invalid</strong> 
+                              </alert>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="email"><i class="fa fa-users" aria-hidden="true"></i></span>
+                            <!-- <input type="email" class="form-control" placeholder="enter your number" -->
+                            <select name="department" id="dept" class="form-control" [(ngModel)]="formdata.department"
+                                #edept=ngModel required>
+                                <option value=""> select</option>
+                                <option value="IT">IT</option>
+                                <option value="Admin">Admin</option>
+                                <option value="BPO">BPO</option>
+                                <option value="NON-BPO">Sales</option>
+                                <option value="Account">NON-IT</option>
+                            </select>
+
+                        </div>
+                        <div class="text-danger" *ngIf="edept?.invalid && edept.touched">please select department</div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="pass"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                            <input type="password" class="form-control" placeholder="enter your password"
+                                aria-describedby="pass" name="password" [(ngModel)]="formdata.password" #epass=ngModel
+                                required pattern="[a-z][0-9]{6}" />
+
+                        </div>
+                        <div class="text-danger" *ngIf="epass.errors?.required && epass.touched">
+                            <alert type="danger">
+                                <strong>password required</strong> 
+                              </alert>
+                        
+                        </div>
+                        <div class="text-danger" *ngIf="!epass.errors?.required && epass.touched && epass?.invalid">
+                            <alert type="danger">
+                                <strong>password should be[0-9][a-z]</strong> 
+                              </alert>
+                            
+                        </div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <div class="input-group">
+                            <span class="input-group-text" id="cpass"><i class="fa fa-unlock-alt" aria-hidden="true"></i></span>
+                            <input type="password" class="form-control" placeholder="enter your  confirm password"
+                                aria-describedby="cpass" #ecpass=ngModel name="confirmpassword" 
+                                [(ngModel)]="formdata.confirmpassword" required />
+                        </div>
+                        <div class="text-danger" *ngIf="ecpass.errors?.required && ecpass.touched">
+                            <alert type="danger">
+                                <strong>confirm password required</strong> 
+                              </alert>
+                          
+
+                        </div>
+                    </div>
+
+                    <div class="form-group pt-3">
+                        <textarea class="form-control" name="address" [(ngModel)]="formdata.address"
+                            placeholder="address"></textarea>
+                    </div>
+                    <div class="form-group pt-3">
+                        <input type="submit" value="submit" class="btn">
+                    </div>
+                    <a class="already" href="#" routerLink="/login">
+                        <p>Already register on? login</p>
+                    </a>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

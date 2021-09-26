@@ -1,0 +1,80 @@
+<nav class="navbar navbar-expand-lg navbar-dark btn btn-info">
+    <div class="container-fluid">
+      <a class="navbar-brand" ><h1>Chetu</h1></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#" >Home</a>
+          </li>
+           <li class="nav-item">
+            <a class="nav-link" href="#">blog</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">Food</a>
+            </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#" routerLink="/order-menu">Order-menu</a>
+          </li>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="#" routerLink="/employee-registration"><span class="fa fa-sign-in" aria-hidden="true"></span > Sign Up</a></li>
+            <li id="abc"><a href="#"  routerLink="/login"><span class="fa fa-user-circle-o" aria-hidden="true" ></span> Login</a></li>
+          </ul>
+         
+        </ul>
+        
+      </div>
+    </div>
+</nav>
+
+
+
+
+<div class="row">
+    <div class="col-4 offset-4">
+        <div class="card">
+            <div class="card-header">
+             <h4>Login here</h4>
+            </div>
+            <div class="card-body">
+                <form (ngSubmit)="submit()" [formGroup]="formdata" >
+         <div class="box">
+           <img src="/assets/img/log0.png">
+         </div>
+                    <div class="form-group pt-3">
+                        <label for="">User Id</label>
+                        <input type="text"  class="form-control" name="email" formControlName="userid">
+                        <div class="text-danger"   *ngIf="formdata.controls.userid.errors?.required && formdata.controls.userid.touched"><alert type="danger">
+                          <alert type="danger">
+                            <strong>Email id required</strong> 
+                          </alert>
+                        </alert></div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <label for="">Password</label>
+                        <input type="text"  class="form-control" name="password" formControlName="password">
+                        <div class="text-danger"   *ngIf="formdata.controls.password.errors?.required && formdata.controls.password.touched"> <alert type="danger">
+                          <alert type="danger">
+                            <strong>Email id required</strong> 
+                          </alert>
+                        </alert></div>
+                    </div>
+                    <div class="form-group pt-3">
+                        <!-- <label for="">User Id</label> -->
+                        <input type="submit"  class="btn form-control"  name="btn" [disabled] =!formdata.valid>
+                        <a class="already" href="#" routerLink="/register">
+                            <p>not  register on? signup</p></a>
+                    </div>
+                    
+                    <div class="form-group-pt-3">
+                        <div class="text-danger">
+                            {{errormessage}}
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
